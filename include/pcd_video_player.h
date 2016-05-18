@@ -138,32 +138,24 @@ class PCDVideoPlayer: public QMainWindow {
   unsigned int speed_value_;
 
  public slots:
-  void
-  playButtonPressed() { play_mode_ = true; }
+  void playButtonPressed() { play_mode_ = true; }
 
-  void
-  stopButtonPressed() { play_mode_ = false; }
+  void stopButtonPressed() { play_mode_ = false; }
 
-  void
-      backButtonPressed();
+  void backButtonPressed();
 
-  void
-      nextButtonPressed();
+  void nextButtonPressed();
 
-  void
-      selectFolderButtonPressed();
+  void selectFolderButtonPressed();
 
-  void
-      selectFilesButtonPressed();
+  void selectFilesButtonPressed();
 
-  void
-      indexSliderValueChanged(int value);
+  void indexSliderValueChanged(int value);
 
   void snapshotButtonPressed();
 
  private slots:
-  void
-      timeoutSlot();
+  void timeoutSlot();
 
   void toggleFullscreen();
 };

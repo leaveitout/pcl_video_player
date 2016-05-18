@@ -113,8 +113,7 @@ PCDVideoPlayer::PCDVideoPlayer() {
   connect(ui_->indexSlider, SIGNAL (valueChanged(int)), this, SLOT (indexSliderValueChanged(int)));
 }
 
-void
-PCDVideoPlayer::backButtonPressed() {
+void PCDVideoPlayer::backButtonPressed() {
   if (current_frame_ == 0) // Allready in the beginning
   {
     PCL_DEBUG ("[PCDVideoPlayer::nextButtonPressed] : reached the end\n");
@@ -127,8 +126,7 @@ PCDVideoPlayer::backButtonPressed() {
   }
 }
 
-void
-PCDVideoPlayer::nextButtonPressed() {
+void PCDVideoPlayer::nextButtonPressed() {
   if (current_frame_ == (nr_of_frames_ - 1)) // Reached the end
   {
     PCL_DEBUG ("[PCDVideoPlayer::nextButtonPressed] : reached the end\n");
@@ -141,8 +139,7 @@ PCDVideoPlayer::nextButtonPressed() {
   }
 }
 
-void
-PCDVideoPlayer::selectFolderButtonPressed() {
+void PCDVideoPlayer::selectFolderButtonPressed() {
   pcd_files_.clear();     // Clear the std::vector
   pcd_paths_.clear();     // Clear the boost filesystem paths
 
@@ -194,8 +191,7 @@ PCDVideoPlayer::selectFolderButtonPressed() {
   }
 }
 
-void
-PCDVideoPlayer::selectFilesButtonPressed() {
+void PCDVideoPlayer::selectFilesButtonPressed() {
   pcd_files_.clear();  // Clear the std::vector
   pcd_paths_.clear();     // Clear the boost filesystem paths
 
@@ -227,8 +223,7 @@ PCDVideoPlayer::selectFilesButtonPressed() {
   }
 }
 
-void
-PCDVideoPlayer::timeoutSlot() {
+void PCDVideoPlayer::timeoutSlot() {
   if (play_mode_) {
     if (speed_counter_ == speed_value_) {
       if (current_frame_ == (nr_of_frames_ - 1)) // Reached the end
@@ -270,15 +265,13 @@ PCDVideoPlayer::timeoutSlot() {
   ui_->qvtkWidget->update();
 }
 
-void
-PCDVideoPlayer::indexSliderValueChanged(int value) {
+void PCDVideoPlayer::indexSliderValueChanged(int value) {
   PCL_DEBUG ("[PCDVideoPlayer::indexSliderValueChanged] : (I) : value %d\n", value);
   current_frame_ = value;
   cloud_modified_ = true;
 }
 
-void
-PCDVideoPlayer::toggleFullscreen() {
+void PCDVideoPlayer::toggleFullscreen() {
   if (!this->ui_->qvtkWidget->isFullScreen()) {
     this->showFullScreen();
     this->ui_->qvtkWidget->showFullScreen();
@@ -316,8 +309,7 @@ void PCDVideoPlayer::snapshotButtonPressed() {
 }
 
 
-void
-print_usage() {
+void print_usage() {
   PCL_INFO ("PCDVideoPlayer V0.1\n");
   PCL_INFO ("-------------------\n");
   PCL_INFO (
@@ -331,8 +323,7 @@ print_usage() {
   PCL_INFO ("\t  F toggles fullscreen mode.\n");
 }
 
-int
-main(int argc, char **argv) {
+int main(int argc, char **argv) {
   QApplication app(argc, argv);
 
   PCDVideoPlayer VideoPlayer;
