@@ -6,7 +6,8 @@ project(pcl_video_player)
 find_package(PCL 1.8 REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find includes in corresponding build directories
 set(CMAKE_AUTOMOC ON)
