@@ -59,6 +59,7 @@
 #include <QGroupBox>
 #include <QRadioButton>
 #include <QButtonGroup>
+#include <QShortcut>
 
 // VTK
 #include <vtkRenderWindow.h>
@@ -98,6 +99,8 @@ PCDVideoPlayer::PCDVideoPlayer() {
 
 
   ui_->qvtkWidget->update();
+
+  new QShortcut(QKeySequence (Qt::Key_S), this, SLOT (snapshotButtonPressed()));
 
   // Connect all buttons
   connect(ui_->playButton, SIGNAL (clicked()), this, SLOT (playButtonPressed()));
