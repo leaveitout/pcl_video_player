@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1373</width>
-    <height>870</height>
+    <width>1000</width>
+    <height>675</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>339</x>
       <y>10</y>
-      <width>1026</width>
-      <height>796</height>
+      <width>651</width>
+      <height>611</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,16 +32,22 @@
        <property name="enabled">
         <bool>true</bool>
        </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>1024</width>
-         <height>768</height>
+         <width>640</width>
+         <height>480</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>1920</width>
-         <height>1080</height>
+         <width>640</width>
+         <height>480</height>
         </size>
        </property>
        <property name="sizeIncrement">
@@ -49,6 +55,9 @@
          <width>896</width>
          <height>312</height>
         </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
        </property>
       </widget>
      </item>
@@ -67,7 +76,7 @@
       <x>9</x>
       <y>9</y>
       <width>321</width>
-      <height>791</height>
+      <height>611</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -96,6 +105,13 @@
       <widget class="QPushButton" name="snapshotButton">
        <property name="text">
         <string>Snapshot</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="screenshotButton">
+       <property name="text">
+        <string>Screenshot</string>
        </property>
       </widget>
      </item>
@@ -175,8 +191,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1373</width>
-     <height>29</height>
+     <width>1000</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>

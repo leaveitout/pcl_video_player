@@ -94,12 +94,8 @@ class PCDVideoPlayer: public QMainWindow {
  Q_OBJECT
  public:
   typedef pcl::PointCloud<pcl::PointXYZRGBA> Cloud;
-  typedef Cloud::Ptr CloudPtr;
-  typedef Cloud::ConstPtr CloudConstPtr;
 
   PCDVideoPlayer();
-
-  ~PCDVideoPlayer() { }
 
  protected:
   boost::shared_ptr<pcl::visualization::PCLVisualizer> vis_;
@@ -117,24 +113,27 @@ class PCDVideoPlayer: public QMainWindow {
 
   boost::filesystem::path snapshot_dir_;
 
+  boost::filesystem::path screenshot_dir_;
+
   /** \brief The current displayed frame */
   unsigned int current_frame_;
   /** \brief Store the number of loaded frames */
-  unsigned int nr_of_frames_;
+  unsigned long nr_of_frames_;
 
-  /** \brief Indicate that pointclouds were loaded */
+  /** \brief Indicate that point clouds were loaded */
   bool cloud_present_;
-  /** \brief Indicate that the timeoutSlot needs to reload the pointcloud */
+  /** \brief Indicate that the timeoutSlot needs to reload the point cloud */
   bool cloud_modified_;
 
   /** \brief Indicates that the camera has been initialised were loaded */
   bool camera_init = false;
 
-  /** \brief Indicate that files should play continiously */
+  /** \brief Indicate that files should play continuously */
   bool play_mode_;
   /** \brief In play mode only update if speed_counter_ == speed_value */
   unsigned int speed_counter_;
-  /** \brief Fixes the speed in steps of 5ms, default 5, gives 5+1 * 5ms = 30ms = 33,3 Hz playback speed */
+  /** \brief Fixes the speed in steps of 5ms, default 5,
+   * gives 5+1 * 5ms = 30ms = 33,3 Hz playback speed */
   unsigned int speed_value_;
 
  public slots:
@@ -153,6 +152,8 @@ class PCDVideoPlayer: public QMainWindow {
   void indexSliderValueChanged(int value);
 
   void snapshotButtonPressed();
+
+  void screenshotButtonPressed();
 
  private slots:
   void timeoutSlot();
