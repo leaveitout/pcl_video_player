@@ -100,6 +100,7 @@ PCDVideoPlayer::PCDVideoPlayer () {
   vis_->setSize (320, 240);
   vis_->initCameraParameters ();
   vis_->setCameraFieldOfView (1.02259994 / (640.0 / 480.0));
+  vis_->setShowFPS (false);
   ui_->qvtkWidget->SetRenderWindow (vis_->getRenderWindow ());
   vis_->setupInteractor (ui_->qvtkWidget->GetInteractor (),
                          ui_->qvtkWidget->GetRenderWindow ());
